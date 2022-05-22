@@ -6,7 +6,9 @@ command: cinny
 rename-icon: cinny
 
 finish-args:
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
   - --share=ipc
   - --share=network
   - --filesystem=xdg-download
