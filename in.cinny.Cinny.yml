@@ -35,11 +35,11 @@ modules:
       - rm -rf /app/share/icons/hicolor/512x512@2x
       - install -Dm744 usr/share/applications/cinny.desktop /app/share/applications/in.cinny.Cinny.desktop
     sources:
-      - url: https://github.com/cinnyapp/cinny-desktop/releases/download/v2.0.3/cinny_2.0.3_amd64.deb
-        sha256: bd4a9d58f2fa2bf1b7e1f9f7b2149840e9a1cfd3f2363bedcc48cd0f17f64ad2
+      - url: https://github.com/cinnyapp/cinny-desktop/releases/download/v2.0.4/cinny_2.0.4_amd64.deb
+        sha256: b9d8cb958653a8e05317d1fb37ac099c8a26140790bc0733984a778a61362066
         type: file
         only-arches:
           - x86_64
       - url: https://github.com/cinnyapp/cinny-desktop.git
-        commit: d22109511c515375633d4e69c9b3639d4b82e6f4
+        commit: 1211b0ea698111006afb04b36a5a0111a856e111
         type: git
