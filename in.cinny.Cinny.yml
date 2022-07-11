@@ -39,6 +39,6 @@ modules:
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
       - npm install && npm run tauri build
       - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/cinny
-      - install -Dm644 -t /app/share/applications/ resources/in.cinny.cinnyapp.desktop
-      - install -Dm644 -t /app/share/metainfo/ resources/in.cinny.cinnyapp.appdata.xml
+      - install -Dm644 -t /app/share/applications/ resources/in.cinny.Cinny.desktop
+      - install -Dm644 -t /app/share/metainfo/ resources/in.cinny.Cinny.appdata.xml
       - for i in 16 32 128 256 512;do install -Dm644 src-tauri/target/release/bundle/deb/*/data/usr/share/icons/hicolor/${i}x${i}/apps/cinny.png /app/share/icons/hicolor/${i}x${i}/apps/cinny.png;done
