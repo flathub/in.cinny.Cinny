@@ -34,13 +34,13 @@ modules:
       - cargo-sources.json
     buildsystem: simple
     build-commands:
-      - HOME=$PWD npm config --offline set npm-offline-mirror $FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-mirror
-      - npm install --offline --ignore-scripts
-      - ls -a
+      #- HOME=$PWD npm config --offline set npm-offline-mirror $FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-mirror
+      - npm install #--offline --ignore-scripts
+      #- ls -a
       - cd cinny && npm run build
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
       - cd src-tauri && cargo build --release
-      - cargo install tauri-cli --version 1.0.0-rc.10 --offline
+      - cargo install tauri-cli --version 1.0.2 --offline
       - cargo tauri build
       - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/cinny
       - install -Dm644 -t /app/share/applications/ resources/in.cinny.cinnyapp.desktop
