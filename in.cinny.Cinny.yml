@@ -34,10 +34,10 @@ modules:
       - cargo-sources.json
     buildsystem: simple
     build-commands:
-      - cd cinny && npm install --force && npm run build
+      - cd cinny && npm install --legacy-peer-deps && npm run build
       - cd ..
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
-      - npm run tauri build
+      - npm install && npm run tauri build
       - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/cinny
       - install -Dm644 -t /app/share/applications/ resources/in.cinny.cinnyapp.desktop
       - install -Dm644 -t /app/share/metainfo/ resources/in.cinny.cinnyapp.appdata.xml
