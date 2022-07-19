@@ -5,6 +5,10 @@ sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
 
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node16
+  - org.freedesktop.Sdk.Extension.rust-stable
+
 finish-args:
   - --socket=x11
   #- --socket=wayland
@@ -17,6 +21,9 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-run/keyring
   - --device=dri
+
+build-options:
+  append-path: /usr/lib/sdk/node16/bin:/usr/lib/sdk/rust-stable/bin
 
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
