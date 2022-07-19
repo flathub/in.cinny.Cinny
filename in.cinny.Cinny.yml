@@ -24,9 +24,23 @@ finish-args:
 
 build-options:
   append-path: /usr/lib/sdk/node16/bin:/usr/lib/sdk/rust-stable/bin
+  env:
+    CARGO_HOME: /run/build/Cinny/cargo
+    XDG_CACHE_HOME: /run/build/Cinny/flatpak-node/cache
+    npm_config_cache: /run/build/Cinny/flatpak-node/npm-cache
+    npm_config_sharp_libvips_local_prebuilds: /run/build/Cinny/flatpak-node/libvips-cache
 
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
+
+  - name: libvips
+    sources:
+      - type: git
+        url: https://github.com/libvips/libvips
+        tag: v8.12.2
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\\d.]+)$
 
   - name: Cinny
     sources:
@@ -39,8 +53,11 @@ modules:
       - npm-cinny-sources.json
       - npm-cinny-desktop-sources.json
       - cargo-sources.json
+      - type: file
+        path: setup_sdk_node_headers.sh
     buildsystem: simple
     build-commands:
+      - ./setup_sdk_node_headers.sh
       - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project; done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
       - npm run tauri build -- -b deb
