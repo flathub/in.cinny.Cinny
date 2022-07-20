@@ -50,6 +50,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
+      - path: 0001-disable-tauri-updater.patch
+        type: patch
       - npm-cinny-sources.json
       - npm-cinny-desktop-sources.json
       - cargo-sources.json
