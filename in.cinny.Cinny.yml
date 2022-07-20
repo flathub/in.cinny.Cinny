@@ -37,11 +37,12 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.12.2
+        tag: v8.9.2
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d\.)*\d)$
 
+        commit: 6f0548dc5c272f02481f0a201bbf086cc1152b15
   - name: Cinny
     sources:
       - type: git
@@ -50,6 +51,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d\.)*\d)$
+        commit: c8399677b514eeae309551e04d86cdd43914590e
       - npm-cinny-sources.json
       - npm-cinny-desktop-sources.json
       - cargo-sources.json
@@ -58,12 +60,14 @@ modules:
     buildsystem: simple
     build-commands:
       - ./setup_sdk_node_headers.sh
-      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project; done
+      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
+        done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
       - npm run tauri build -- -b deb
       - install -Dm644 -t /app/share/metainfo/ resources/in.cinny.Cinny.appdata.xml
       - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/*
       - mkdir -p /app/share/icons/hicolor
-      - cp -r src-tauri/target/release/bundle/deb/*/data/usr/share/icons/hicolor/* /app/share/icons/hicolor/
+      - cp -r src-tauri/target/release/bundle/deb/*/data/usr/share/icons/hicolor/*
+        /app/share/icons/hicolor/
       - rm -rf /app/share/icons/hicolor/512x512@2x
       - install -Dm644 -t /app/share/applications/ resources/in.cinny.Cinny.desktop
