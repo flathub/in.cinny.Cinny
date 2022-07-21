@@ -45,6 +45,9 @@ jobs:
           python-version: 3.9
           
       - run: python3 -m pip install pipx
+      - run: python3 -m pip install pipreqs
+      - run: pipreqs flatpak-builder-tools
+      - run: python3 -m pip install -r requirements.txt
 
       - name: Install node generator
         run: cd flatpak-builder-tools/node && pipx install .
@@ -52,7 +55,6 @@ jobs:
       - name: generate node sources
         if: steps.is-updated.outputs.updated
         run: |
-          python3 -m pip install aiohttp
           git submodule update --init
           ver=$(grep release in.cinny.Cinny.appdata.xml | grep -m1 -oP '(?<=version=.)[^"]+')
           curl https://raw.githubusercontent.com/cinnyapp/cinny-desktop/v${ver}/src-tauri/Cargo.lock > Cargo.lock
