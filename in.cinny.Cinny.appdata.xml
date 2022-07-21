@@ -3,7 +3,7 @@
   <id>in.cinny.Cinny</id>
   
   <name>Cinny</name>
-  <summary>Yet another matrix client with simple, elegant and secure interface.</summary>
+  <summary>Yet another Matrix client with simple, elegant and secure interface.</summary>
   <developer_name>Ajay Bura</developer_name>
   
   <metadata_license>CC0-1.0</metadata_license>
@@ -36,13 +36,13 @@
   <launchable type="desktop-id">in.cinny.Cinny.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/cinnyapp/cinny-desktop/main/resources/screenshot1.png</image>
+      <image>https://raw.githubusercontent.com/flathub/in.cinny.Cinny/master/resources/screenshot1.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/cinnyapp/cinny-desktop/main/resources/screenshot2.png</image>
+      <image>https://raw.githubusercontent.com/flathub/in.cinny.Cinny/master/resources/screenshot2.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/cinnyapp/cinny-desktop/main/resources/screenshot3.png</image>
+      <image>https://raw.githubusercontent.com/flathub/in.cinny.Cinny/master/resources/screenshot3.png</image>
     </screenshot>
   </screenshots>
 
