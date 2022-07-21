@@ -42,11 +42,8 @@ jobs:
         if: steps.is-updated.outputs.updated
         with:
           python-version: 3.9
-
-      - uses: BSFishy/pip-action@v1
-        with:
-          packages: |
-            pipx
+          
+      - run: python3 -m pip install pipx
 
       - name: Install node generator
         run: cd flatpak-builder-tools/node && pipx install .
