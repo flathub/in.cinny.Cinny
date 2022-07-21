@@ -47,7 +47,7 @@ jobs:
       - run: python3 -m pip install pipx
       - run: python3 -m pip install pipreqs
       - run: pipreqs flatpak-builder-tools
-      - run: python3 -m pip install -r requirements.txt
+      - run: python3 -m pip install -r flatpak-builder-tools/requirements.txt
 
       - name: Install node generator
         run: cd flatpak-builder-tools/node && pipx install .
