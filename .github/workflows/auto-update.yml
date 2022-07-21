@@ -1,8 +1,8 @@
 name: Auto-update
 
 on:
-  # schedule:
-  #  - cron: "30 19 * * 1" # Run every Monday on 19:30 UTC
+  schedule:
+   - cron: "30 19 * * 1" # Run every Monday on 19:30 UTC
   workflow_dispatch:
 
 env:

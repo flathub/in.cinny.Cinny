@@ -41,7 +41,6 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
-
         commit: 5c249e0e8e7726fe8e5c88c921439a5fe3e94e6c
   - name: Cinny
     sources:
