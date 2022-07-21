@@ -1,8 +1,8 @@
-name: auto-update
+name: Auto-update
 
 on:
   # schedule:
-  #  - cron: "0 0 * * *"
+  #  - cron: "30 19 * * 1" # Run every Monday on 19:30 UTC
   workflow_dispatch:
 
 env:
@@ -12,16 +12,11 @@ env:
 
 jobs:
   flatpak-external-data-checker:
-    name: 'check update (${{ matrix.branch || github.ref_name }})'
+    name: 'Check update (${{ matrix.branch || github.ref_name }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
         branch: ['master']
-        isSchedule:
-          - ${{ github.event_name == 'schedule' }}
-        exclude:
-          - branch: 'master'
-            isSchedule: false
             
     steps:
       - uses: actions/checkout@v3.0.2
@@ -33,7 +28,7 @@ jobs:
         with:
           args: --edit-only ${{ env.FLATPAK_ID }}.yml
 
-      - name: check updated
+      - name: Check updated
         id: is-updated 
         run: |
           git status -s -uno
@@ -52,7 +47,7 @@ jobs:
       - name: Install node generator
         run: cd flatpak-builder-tools/node && pipx install .
 
-      - name: generate node sources
+      - name: Generate node sources
         if: steps.is-updated.outputs.updated
         run: |
           git submodule update --init
@@ -67,12 +62,12 @@ jobs:
           rm cinny-desktop-package-lock.json
           rm cinny-package-lock.json
           
-      - name: reset
+      - name: Reset
         run: |
           git checkout -- ${FLATPAK_ID}.yml *.xml
 
       - uses: docker://ghcr.io/flathub/flatpak-external-data-checker:latest
-        name: recheck and open pr 
+        name: Recheck and open PR
         env:
           GIT_AUTHOR_NAME: Flatpak External Data Checker
           GIT_COMMITTER_NAME: Flatpak External Data Checker
