@@ -34,25 +34,28 @@ modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
 
   - name: libvips
+    cleanup:
+      - /*
     sources:
       - type: git
         url: https://github.com/libvips/libvips
         tag: v8.12.2
+        commit: 5c249e0e8e7726fe8e5c88c921439a5fe3e94e6c
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
-        commit: 5c249e0e8e7726fe8e5c88c921439a5fe3e94e6c
+
   - name: Cinny
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
         tag: v2.0.4
+        commit: c8399677b514eeae309551e04d86cdd43914590e
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
-        commit: c8399677b514eeae309551e04d86cdd43914590e
-      - path: 0001-disable-tauri-updater.patch
-        type: patch
+      - type: patch
+        path: 0001-disable-tauri-updater.patch
       - npm-cinny-sources.json
       - npm-cinny-desktop-sources.json
       - cargo-sources.json
@@ -65,9 +68,10 @@ modules:
     buildsystem: simple
     build-commands:
       - ./setup_sdk_node_headers.sh
-      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
+      - for project in . cinny; do
+          npm ci --offline --legacy-peer-deps --prefix=$project;
         done
-      - cargo --offline fetch --manifest-path src-tauri/Cargo.toml --verbose
+      - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
       - npm run tauri build -- -b deb
       - install -Dm644 -t /app/share/metainfo/ in.cinny.Cinny.appdata.xml
       - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/*
