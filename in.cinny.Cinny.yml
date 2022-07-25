@@ -39,8 +39,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.12.2
-        commit: 5c249e0e8e7726fe8e5c88c921439a5fe3e94e6c
+        tag: v8.13.0
+        commit: fa6c034b325eafcb9e6f6b3dc00244ac040c744f
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
@@ -68,8 +68,7 @@ modules:
     buildsystem: simple
     build-commands:
       - ./setup_sdk_node_headers.sh
-      - for project in . cinny; do
-          npm ci --offline --legacy-peer-deps --prefix=$project;
+      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
       - npm run tauri build -- -b deb
