@@ -49,8 +49,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v2.1.1
-        commit: c98cb286b759b5f00c91240dbe0cf50ec988fb03
+        tag: v2.1.2
+        commit: 6352516b3ba241b3f4f25a289b9edaf3eefe18de
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$

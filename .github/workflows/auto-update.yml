@@ -47,7 +47,7 @@ jobs:
       - name: Install node generator
         run: cd flatpak-builder-tools/node && pipx install .
 
-      - name: Generate node sources
+      - name: Generate node/cargo sources
         if: steps.is-updated.outputs.updated
         run: |
           git submodule update --init
