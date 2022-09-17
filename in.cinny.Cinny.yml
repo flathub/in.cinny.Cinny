@@ -10,13 +10,14 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 
 finish-args:
-  - --socket=x11
-  #- --socket=wayland
-  #- --socket=fallback-x11
+  - --socket=wayland
+  - --socket=fallback-x11
+  #- --socket=x11
   - --socket=pulseaudio
   - --share=ipc
   - --share=network
-  - --filesystem=xdg-download
+  - --filesystem=home
+  #- --filesystem=xdg-download
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-run/keyring
