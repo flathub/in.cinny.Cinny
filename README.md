@@ -1,7 +1,7 @@
 # Cinny desktop
-## source generation
 [Cinny desktop](https://github.com/cinnyapp/cinny-desktop.git) is made with Tauri and built using npm and cargo packages. Cinny itself has node dependencies managed with npm as well.
 
+## Source generation
 To transform their package locks into flatpak sources, [flatpak-builder-tools](https://github.com/flatpak/flatpak-builder-tools) is used:
 
 ```sh
