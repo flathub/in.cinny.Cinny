@@ -38,29 +38,26 @@ jobs:
         if: steps.is-updated.outputs.updated
         with:
           python-version: 3.9
-          
-      - run: python3 -m pip install pipx
-      - run: python3 -m pip install pipreqs
-      - run: pipreqs flatpak-builder-tools
-      - run: python3 -m pip install -r flatpak-builder-tools/requirements.txt
 
-      - name: Install node generator
-        run: cd flatpak-builder-tools/node && pipx install .
+      - name: Install flatpak-node-generator and requirements
+        if: steps.is-updated.outputs.updated
+        run: |
+          python3 -m pip install pipx
+          python3 -m pip install pipreqs
+          pipreqs flatpak-builder-tools
+          python3 -m pip install -r flatpak-builder-tools/requirements.txt
+          cd flatpak-builder-tools/node && pipx install .
 
       - name: Generate node/cargo sources
         if: steps.is-updated.outputs.updated
         run: |
           git submodule update --init
           ver=$(grep release in.cinny.Cinny.appdata.xml | grep -m1 -oP '(?<=version=.)[^"]+')
-          curl https://raw.githubusercontent.com/cinnyapp/cinny-desktop/v${ver}/src-tauri/Cargo.lock > Cargo.lock
-          curl https://raw.githubusercontent.com/cinnyapp/cinny-desktop/v${ver}/package-lock.json > cinny-desktop-package-lock.json
-          curl https://raw.githubusercontent.com/cinnyapp/cinny/v${ver}/package-lock.json > cinny-package-lock.json
-          flatpak-builder-tools/cargo/flatpak-cargo-generator.py -o cargo-sources.json Cargo.lock
-          flatpak-node-generator --no-requests-cache --no-xdg-layout -o npm-cinny-desktop-sources.json npm cinny-desktop-package-lock.json
-          flatpak-node-generator --no-requests-cache --no-xdg-layout -o npm-cinny-sources.json npm cinny-package-lock.json
-          rm Cargo.lock
-          rm cinny-desktop-package-lock.json
-          rm cinny-package-lock.json
+          git clone --recursive -b "v${ver}" --depth=1 https://github.com/cinnyapp/cinny-desktop.git
+          flatpak-builder-tools/cargo/flatpak-cargo-generator.py -o cargo-sources.json cinny-desktop/src-tauri/Cargo.lock
+          flatpak-node-generator --no-requests-cache --no-xdg-layout -o npm-cinny-desktop-sources.json npm cinny-desktop/package-lock.json
+          flatpak-node-generator --no-requests-cache --no-xdg-layout -o npm-cinny-sources.json npm cinny-desktop/cinny/package-lock.json
+          rm -rf cinny-desktop
           
       - name: Reset
         run: |
