@@ -55,7 +55,7 @@ jobs:
           ver=$(grep release in.cinny.Cinny.appdata.xml | grep -m1 -oP '(?<=version=.)[^"]+')
           git clone --recursive -b "v${ver}" --depth=1 https://github.com/cinnyapp/cinny-desktop.git
           flatpak-builder-tools/cargo/flatpak-cargo-generator.py -o cargo-sources.json cinny-desktop/src-tauri/Cargo.lock
-          flatpak-node-generator --no-requests-cache -r -o npm-cinny-sources.json npm cinny-desktop/package-lock.json
+          flatpak-node-generator --no-requests-cache -r -o node-sources.json npm cinny-desktop/package-lock.json
           rm -rf cinny-desktop
           
       - name: Reset

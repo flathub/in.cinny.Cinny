@@ -52,7 +52,7 @@ modules:
           tag-pattern: ^v((?:\d+.)*\d+)$
       - type: patch
         path: 0001-disable-tauri-updater.patch
-      - npm-cinny-sources.json
+      - node-sources.json
       - cargo-sources.json
       - type: file
         path: in.cinny.Cinny.desktop
