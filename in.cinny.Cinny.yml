@@ -30,8 +30,6 @@ modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
 
   - name: libvips
-    cleanup:
-      - /*
     sources:
       - type: git
         url: https://github.com/libvips/libvips
