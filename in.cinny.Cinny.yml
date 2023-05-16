@@ -40,6 +40,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
+    buildsystem: meson
 
   - name: Cinny
     sources:
