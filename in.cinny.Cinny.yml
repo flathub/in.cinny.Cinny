@@ -40,7 +40,7 @@ modules:
           version-pattern: <a href="webkitgtk\-(2\.38\.\d+)\.tar\.xz">
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
-    config-opts: 
+    config-opts:
       - -DPORT=GTK
       - -DCMAKE_BUILD_TYPE=Release
       - -DENABLE_DOCUMENTATION=OFF
@@ -64,8 +64,8 @@ modules:
       - name: xdg-dbus-proxy
         sources:
           - type: archive
-            url: https://github.com/flatpak/xdg-dbus-proxy/releases/download/0.1.4/xdg-dbus-proxy-0.1.4.tar.xz
-            sha256: 1ec0eab53d1e49966d722352bcfd51ac402dce5190baedc749a8541e761670ab
+            url: https://github.com/flatpak/xdg-dbus-proxy/releases/download/0.1.5/xdg-dbus-proxy-0.1.5.tar.xz
+            sha256: 061dcfaf8a0650e5fd9d5432dfe88bda749ea0d079dc136304bfecfbce0661fb
             x-checker-data:
               type: json
               url: https://api.github.com/repos/flatpak/xdg-dbus-proxy/releases/latest
@@ -81,8 +81,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.14.2
-        commit: 800b7f20a4f75a72775692bbb4775a17a338bc83
+        tag: v8.14.3
+        commit: cc6e9a5035481c0605e63b6d44cfef791b6e06bc
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
