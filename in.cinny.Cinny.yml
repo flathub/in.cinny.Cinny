@@ -32,23 +32,51 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
-        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
+        url: https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz
+        sha256: 828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
-          version-pattern: <a href="webkitgtk\-(2\.38\.\d+)\.tar\.xz">
+          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
     config-opts:
       - -DPORT=GTK
-      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DENABLE_DOCUMENTATION=OFF
+      - -DENABLE_MINIBROWSER=OFF
+      - -DENABLE_WEBDRIVER=OFF
       - -DENABLE_GAMEPAD=OFF
       - -DUSE_SOUP2=ON
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
+
+      - name: unifdef
+        no-autogen: true
+        make-install-args:
+          - prefix=${FLATPAK_DEST}
+        sources:
+          - type: archive
+            url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
+            sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
+        cleanup:
+          - '*'
+
+      - name: libjxl
+        buildsystem: cmake
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
+          - -DBUILD_TESTING=OFF
+        sources:
+          - type: git
+            url: https://github.com/libjxl/libjxl.git
+            tag: v0.8.2
+            commit: 954b460768c08a147abf47689ad69b0e7beff65e
+            disable-shallow-clone: true
+            x-checker-data:
+              type: git
+              tag-pattern: ^v([\d.]+)$
 
   - name: libvips
     cleanup:
