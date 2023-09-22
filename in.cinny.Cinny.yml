@@ -121,11 +121,8 @@ modules:
       - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
-      - npm run tauri build -- -b deb
+      - npm run tauri build -- -b none
       - install -Dm644 -t /app/share/metainfo/ in.cinny.Cinny.appdata.xml
-      - install -Dm755 -t /app/bin/ src-tauri/target/release/bundle/deb/*/data/usr/bin/*
-      - mkdir -p /app/share/icons/hicolor
-      - cp -r src-tauri/target/release/bundle/deb/*/data/usr/share/icons/hicolor/*
-        /app/share/icons/hicolor/
-      - rm -rf /app/share/icons/hicolor/512x512@2x
+      - install -Dm755 -t /app/bin/ src-tauri/target/release/cinny
+      - install -Dm755 -t /app/share/icons/hicolor/scalable/apps/ cinny/public/res/svg/cinny.svg
       - install -Dm644 -t /app/share/applications/ in.cinny.Cinny.desktop
