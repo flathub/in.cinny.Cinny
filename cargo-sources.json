@@ -1601,6 +1601,32 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
+        "url": "https://static.crates.io/crates/libappindicator/libappindicator-0.7.1.crate",
+        "sha256": "db2d3cb96d092b4824cb306c9e544c856a4cb6210c1081945187f7f1924b47e8",
+        "dest": "cargo/vendor/libappindicator-0.7.1"
+    },
+    {
+        "type": "inline",
+        "contents": "{\"package\": \"db2d3cb96d092b4824cb306c9e544c856a4cb6210c1081945187f7f1924b47e8\", \"files\": {}}",
+        "dest": "cargo/vendor/libappindicator-0.7.1",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://static.crates.io/crates/libappindicator-sys/libappindicator-sys-0.7.3.crate",
+        "sha256": "f1b3b6681973cea8cc3bce7391e6d7d5502720b80a581c9a95c9cbaf592826aa",
+        "dest": "cargo/vendor/libappindicator-sys-0.7.3"
+    },
+    {
+        "type": "inline",
+        "contents": "{\"package\": \"f1b3b6681973cea8cc3bce7391e6d7d5502720b80a581c9a95c9cbaf592826aa\", \"files\": {}}",
+        "dest": "cargo/vendor/libappindicator-sys-0.7.3",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "archive",
+        "archive-type": "tar-gzip",
         "url": "https://static.crates.io/crates/libc/libc-0.2.138.crate",
         "sha256": "db6d7e329c562c5dfab7a46a2afabc8b987ab9a4834c9d1ca04dc54c1546cef8",
         "dest": "cargo/vendor/libc-0.2.138"
@@ -1622,6 +1648,19 @@
         "type": "inline",
         "contents": "{\"package\": \"c185b5b7ad900923ef3a8ff594083d4d9b5aea80bb4f32b8342363138c0d456b\", \"files\": {}}",
         "dest": "cargo/vendor/libdbus-sys-0.2.2",
+        "dest-filename": ".cargo-checksum.json"
+    },
+    {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://static.crates.io/crates/libloading/libloading-0.7.4.crate",
+        "sha256": "b67380fd3b2fbe7527a606e18729d21c6f3951633d0500574c4dc22d2d638b9f",
+        "dest": "cargo/vendor/libloading-0.7.4"
+    },
+    {
+        "type": "inline",
+        "contents": "{\"package\": \"b67380fd3b2fbe7527a606e18729d21c6f3951633d0500574c4dc22d2d638b9f\", \"files\": {}}",
+        "dest": "cargo/vendor/libloading-0.7.4",
         "dest-filename": ".cargo-checksum.json"
     },
     {
