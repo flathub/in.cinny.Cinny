@@ -32,8 +32,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz
-        sha256: 828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b
+        url: https://webkitgtk.org/releases/webkitgtk-2.42.1.tar.xz
+        sha256: 6f41fac9989d3ee51c08c48de1d439cdeddecbc757e34b6180987d99b16d2499
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -84,8 +84,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.14.4
-        commit: f049dcdfc434d643e3155bb990192d489ae5ff1a
+        tag: v8.14.5
+        commit: 4b3df69556a7083d1f89fecff49386258a405e69
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
