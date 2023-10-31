@@ -118,7 +118,7 @@ modules:
         npm_config_sharp_libvips_local_prebuilds: /run/build/Cinny/flatpak-node/libvips-cache
         NODE_OPTIONS: --max_old_space_size=4096
     build-commands:
-      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
+      - for project in . cinny; do npm ci --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
       - npm run tauri build -- -b none
