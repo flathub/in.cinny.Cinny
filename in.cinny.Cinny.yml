@@ -120,6 +120,7 @@ modules:
     build-commands:
       - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
+      - cargo vendor
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
       - npm run tauri build -- -b none
       - install -Dm644 -t /app/share/metainfo/ in.cinny.Cinny.appdata.xml
