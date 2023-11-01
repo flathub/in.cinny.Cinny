@@ -95,8 +95,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v3.2.0
-        commit: 3c22636bdf20104704957aaa7bfe08521ba7ca33
+        tag: v3.2.1
+        commit: 6f83708511f923d6561bd5f5357049a698361a43
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
@@ -118,7 +118,7 @@ modules:
         npm_config_sharp_libvips_local_prebuilds: /run/build/Cinny/flatpak-node/libvips-cache
         NODE_OPTIONS: --max_old_space_size=4096
     build-commands:
-      - for project in . cinny; do npm ci --legacy-peer-deps --prefix=$project;
+      - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
       - npm run tauri build -- -b none
