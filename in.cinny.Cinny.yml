@@ -32,8 +32,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.1.tar.xz
-        sha256: 6f41fac9989d3ee51c08c48de1d439cdeddecbc757e34b6180987d99b16d2499
+        url: https://webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
+        sha256: b64278c1f20b8cfdbfb5ff573c37d871aba74a1db26d9b39f74e8953fe61e749
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -71,8 +71,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/libjxl/libjxl.git
-            tag: v0.8.2
-            commit: 954b460768c08a147abf47689ad69b0e7beff65e
+            tag: v0.9.2
+            commit: 41b8cdab7815c79a060938bfe0c24337e2eb9e54
             disable-shallow-clone: true
             x-checker-data:
               type: git
@@ -84,8 +84,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.14.5
-        commit: 4b3df69556a7083d1f89fecff49386258a405e69
+        tag: v8.15.1
+        commit: 843a15101a166f24261443aab3c9a56b8459f18d
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
