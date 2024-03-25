@@ -5,20 +5,38 @@
   <name>Cinny</name>
   <summary>Yet another Matrix client with simple, elegant and secure interface.</summary>
   <developer_name>Ajay Bura</developer_name>
+  <developer id="io.github.ajbura">
+    <name>Ajay Bura</name>
+  </developer>
   
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>AGPL-3.0-only</project_license>
   
-  <url type="homepage">https://cinny.in</url>
-  <url type="bugtracker">https://github.com/ajbura/cinny/issues</url>
+  <url type="homepage">https://cinny.in/</url>
+  <url type="bugtracker">https://github.com/cinnyapp/cinny/issues</url>
   <url type="donation">https://cinny.in/#sponsor</url>
   
   <supports>
-    <control>pointing</control>
-    <control>keyboard</control>
     <control>touch</control>
   </supports>
   
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <display_length compare="ge" side="shortest">330</display_length>
+    <display_length compare="ge" side="longest">360</display_length>
+  </recommends>
+
+  <requires>
+    <internet>always</internet>
+  </requires>
+
+  <categories>
+    <category>Network</category>
+    <category>InstantMessaging</category>
+    <category>Chat</category>
+  </categories>
+
   <description>
     <p>
       Cinny is a matrix.org client focusing primarily on simple, elegant and secure interface protected by e2ee with the power of open source.
@@ -27,11 +45,6 @@
       Features: User-friendly design, Login and register, Full space support, Encryption and emoji verification, Ability to create new rooms and tweak settings, Support replies, markdown, message editing, Dark, light, and black themes.
     </p>
   </description>
-
-  <custom>
-      <value key="Purism::form_factor">workstation</value>
-      <value key="Purism::form_factor">mobile</value>
-  </custom>
   
   <launchable type="desktop-id">in.cinny.Cinny.desktop</launchable>
   <screenshots>
