@@ -32,8 +32,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.44.0.tar.xz
-        sha256: c66530e41ba59b1edba4ee89ef20b2188e273bed0497e95084729e3cfbe30c87
+        url: https://webkitgtk.org/releases/webkitgtk-2.44.2.tar.xz
+        sha256: 523f42c8ff24832add17631f6eaafe8f9303afe316ef1a7e1844b952a7f7521b
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -73,8 +73,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/libjxl/libjxl.git
-            tag: v0.10.2
-            commit: e1489592a770b989303b0edc5cc1dc447bbe0515
+            tag: v0.10.3
+            commit: 4a3b22d2600f92d8706fb72d85d52bfee2acbd54
             disable-shallow-clone: true
             x-checker-data:
               type: git
@@ -97,8 +97,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v3.2.1
-        commit: 6f83708511f923d6561bd5f5357049a698361a43
+        tag: v4.0.1
+        commit: f36934a796d8f1a241fb1787fb26e5105aa95313
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
