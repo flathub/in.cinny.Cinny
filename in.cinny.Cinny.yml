@@ -32,8 +32,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.1.tar.xz
-        sha256: 2a14faac359aff941d0bc4443eb5537e3702bcaf316b0a129e0e65f3ff8eaac0
+        url: https://webkitgtk.org/releases/webkitgtk-2.46.3.tar.xz
+        sha256: 85e09fa6ff9fea49678ba9975dbc64ea3242833f8f8a7d6a8937b2f292fcb28d
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -86,8 +86,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.15.4
-        commit: 5efd31c383786422ce64d73a94499d5d2ab3c33d
+        tag: v8.16.0
+        commit: 8dd05105843830110cad2338e0af145a682d4708
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
@@ -97,8 +97,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v4.2.2
-        commit: 792837b02b08c8ed0ca055025be4d350c879ce4b
+        tag: v4.2.3
+        commit: 05ce94884acc609facf46690a5c06078cb15a097
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
