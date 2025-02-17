@@ -3387,17 +3387,17 @@
     },
     {
         "type": "file",
-        "url": "https://registry.npmjs.org/emojibase-data/-/emojibase-data-7.0.1.tgz",
-        "sha512": "04b66939dc3216967b973056c83b67c662959bf4893188007e9d627f7a3a9f54d550c49701fd278a438d5e5f742d9b89fe6dd758f06492e6e009eb7606c08619",
-        "dest-filename": "6939dc3216967b973056c83b67c662959bf4893188007e9d627f7a3a9f54d550c49701fd278a438d5e5f742d9b89fe6dd758f06492e6e009eb7606c08619",
-        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/04/b6"
+        "url": "https://registry.npmjs.org/emojibase-data/-/emojibase-data-15.3.2.tgz",
+        "sha512": "4e90f24c30d376a588262c55e6c4c0e8e4343f425f20878adad151477ab9e86f4b2bae7294067bcf72b2057a24a6f4d327e98b5174176cb3725648ef9d32c4f8",
+        "dest-filename": "f24c30d376a588262c55e6c4c0e8e4343f425f20878adad151477ab9e86f4b2bae7294067bcf72b2057a24a6f4d327e98b5174176cb3725648ef9d32c4f8",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/4e/90"
     },
     {
         "type": "file",
-        "url": "https://registry.npmjs.org/emojibase/-/emojibase-6.1.0.tgz",
-        "sha512": "d4690a24f5cfead5646091ce052247a063abffab9a0f167dc49e87ee6e8f7dd1974e64206c02c72d6695458e068bfa9fe71fe04ff3545cb3ee48760baad2edad",
-        "dest-filename": "0a24f5cfead5646091ce052247a063abffab9a0f167dc49e87ee6e8f7dd1974e64206c02c72d6695458e068bfa9fe71fe04ff3545cb3ee48760baad2edad",
-        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/d4/69"
+        "url": "https://registry.npmjs.org/emojibase/-/emojibase-15.3.1.tgz",
+        "sha512": "18db231e71b62772ad83af3816cfef651ffa5e93929193cc02ff39107aebe9baf644dd9c24dc1d4b86a6ff76122b7cbefe03afda49a82b718675a85774cc60da",
+        "dest-filename": "231e71b62772ad83af3816cfef651ffa5e93929193cc02ff39107aebe9baf644dd9c24dc1d4b86a6ff76122b7cbefe03afda49a82b718675a85774cc60da",
+        "dest": "flatpak-node/npm-cache/_cacache/content-v2/sha512/18/db"
     },
     {
         "type": "file",
@@ -9013,6 +9013,12 @@
     },
     {
         "type": "inline",
+        "contents": "745b5e7286e6a03eb8b828b4c7d06f1b0e372f62\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/emojibase-data/-/emojibase-data-15.3.2.tgz\", \"integrity\": \"sha512-TpDyTDDTdqWIJixV5sTA6OQ0P0JfIIeK2tFRR3q56G9LK65ylAZ7z3KyBXokpvTTJ+mLUXQXbLNyVkjvnTLE+A==\", \"time\": 0, \"size\": 6096001, \"metadata\": {\"url\": \"https://registry.npmjs.org/emojibase-data/-/emojibase-data-15.3.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "54f88a185958c53e88eafcb9398c70d89be5d8fba22844a481ea6012269f",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/9d/29"
+    },
+    {
+        "type": "inline",
         "contents": "753f8336fc8ed139bd6a10e6859ac9d76f8d26db\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.2.1.tgz\", \"integrity\": \"sha512-l9qO6eFlUETHtuihLcYOaLKByJ1f+N4kthcU9YjHy3N+B3hWv0y/2Nd0mu/7lTFnRQHTrSdXF50HQ3bl5fEnng==\", \"time\": 0, \"size\": 8809, \"metadata\": {\"url\": \"https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.2.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
         "dest-filename": "2f294babe00f916360a10749980eab2d0776b629d63f82eb4f6622630844",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/10/90"
@@ -10399,12 +10405,6 @@
     },
     {
         "type": "inline",
-        "contents": "b5ad60e01d691c5e2b1cbe7e15713ecfa9947545\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/emojibase-data/-/emojibase-data-7.0.1.tgz\", \"integrity\": \"sha512-BLZpOdwyFpZ7lzBWyDtnxmKVm/SJMYgAfp1if3o6n1TVUMSXAf0nikONXl90LZuJ/m3XWPBkkubgCet2BsCGGQ==\", \"time\": 0, \"size\": 5328050, \"metadata\": {\"url\": \"https://registry.npmjs.org/emojibase-data/-/emojibase-data-7.0.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
-        "dest-filename": "e811828b99d4e50061c68c8c34550944c78a666e374ceef17646ae27fdc2",
-        "dest": "flatpak-node/npm-cache/_cacache/index-v5/e1/bc"
-    },
-    {
-        "type": "inline",
         "contents": "b5d16bf14c5b16afbf2e4820d2bfef925dfeb8bc\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz\", \"integrity\": \"sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==\", \"time\": 0, \"size\": 3449, \"metadata\": {\"url\": \"https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
         "dest-filename": "c7d3cc971492220b7cec031eec035df5e60b61a4319081d0cc87870409b3",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/1c/a4"
@@ -10672,12 +10672,6 @@
         "contents": "c0f0065af70a7d0e18983cd7bb6e4b77735e952e\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz\", \"integrity\": \"sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==\", \"time\": 0, \"size\": 7360, \"metadata\": {\"url\": \"https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
         "dest-filename": "cece4a065d9009795606216ee3e75501611290013df6fa0039bed9edd10a",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/52/1d"
-    },
-    {
-        "type": "inline",
-        "contents": "c10504b2b51e33a811bbc1ff7aac8768c20b9609\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/emojibase/-/emojibase-6.1.0.tgz\", \"integrity\": \"sha512-1GkKJPXP6tVkYJHOBSJHoGOr/6uaDxZ9xJ6H7m6PfdGXTmQgbALHLWaVRY4Gi/qf5x/gT/NUXLPuSHYLqtLtrQ==\", \"time\": 0, \"size\": 21929, \"metadata\": {\"url\": \"https://registry.npmjs.org/emojibase/-/emojibase-6.1.0.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
-        "dest-filename": "a5f85abc7c9d835d8d594d658745f7ad7e8ebaa3b9881d290a4a1618bd09",
-        "dest": "flatpak-node/npm-cache/_cacache/index-v5/26/cd"
     },
     {
         "type": "inline",
@@ -11284,6 +11278,12 @@
         "contents": "dd4fa80415eced1b1d20bae56673f63f8f407bf7\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.3.1.tgz\", \"integrity\": \"sha512-tgg6b91pAybXHJQMAAwW9VuWBO6Thi+q7BCNARLwSqlmsHz0XYURtGvh/AuwSADXSI4h/2uHbs7s4FzlZDGSGA==\", \"time\": 0, \"size\": 38722, \"metadata\": {\"url\": \"https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-15.3.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
         "dest-filename": "2f9c248390fba6428f784617a35b1f1f319eed6cbfa4df7b758f19a11d76",
         "dest": "flatpak-node/npm-cache/_cacache/index-v5/9a/b3"
+    },
+    {
+        "type": "inline",
+        "contents": "dd6776b4774d1a917f261616d780b7c84ef4719a\t{\"key\": \"make-fetch-happen:request-cache:https://registry.npmjs.org/emojibase/-/emojibase-15.3.1.tgz\", \"integrity\": \"sha512-GNsjHnG2J3Ktg684Fs/vZR/6XpOSkZPMAv85EHrr6br2RN2cJNwdS4am/3YSK3y+/gOv2kmoK3GGdahXdMxg2g==\", \"time\": 0, \"size\": 27514, \"metadata\": {\"url\": \"https://registry.npmjs.org/emojibase/-/emojibase-15.3.1.tgz\", \"reqHeaders\": {}, \"resHeaders\": {}}}",
+        "dest-filename": "bc786a9da51ea46bd329f0ee9a3b5542a6764a4d69ae3657834fd727e11f",
+        "dest": "flatpak-node/npm-cache/_cacache/index-v5/a8/84"
     },
     {
         "type": "inline",
