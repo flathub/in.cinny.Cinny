@@ -1,6 +1,6 @@
 id: in.cinny.Cinny
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
@@ -12,16 +12,27 @@ sdk-extensions:
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
-  #- --socket=x11
-  - --socket=pulseaudio
   - --share=ipc
+  - --device=dri
+  - --socket=pulseaudio
   - --share=network
+
+  - --filesystem=xdg-run/keyring
+
+  # Tauri does not yet support the Freedesktop.org
+  # File Transfer portal, so this is needed to support
+  # the drag and drop files.
   - --filesystem=home
+  # Instead of prompting the user with a file chooser
+  # (using the File Chooser portal), Tauri stores the
+  # files of <a download> links into XDG_DOWNLOAD_DIR
   #- --filesystem=xdg-download
+
+  # tauri-plugin-notification uses notify-rust.
+  # Removing the D-Bus access below depends on
+  # https://github.com/hoodie/notify-rust/issues/218
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --filesystem=xdg-run/keyring
-  - --device=dri
 
 build-options:
   append-path: /usr/lib/sdk/node20/bin:/usr/lib/sdk/rust-stable/bin
