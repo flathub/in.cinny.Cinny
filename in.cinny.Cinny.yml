@@ -79,7 +79,7 @@ modules:
           - '*'
 
       - name: libjxl
-        buildsystem: cmake
+        buildsystem: cmake-ninja
         config-opts:
           - -DCMAKE_BUILD_TYPE=Release
           - -DBUILD_TESTING=OFF
