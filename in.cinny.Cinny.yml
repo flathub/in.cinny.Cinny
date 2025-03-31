@@ -1,6 +1,6 @@
 id: in.cinny.Cinny
 runtime: org.gnome.Platform
-runtime-version: '46'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
@@ -12,16 +12,27 @@ sdk-extensions:
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
-  #- --socket=x11
-  - --socket=pulseaudio
   - --share=ipc
+  - --device=dri
+  - --socket=pulseaudio
   - --share=network
+
+  - --filesystem=xdg-run/keyring
+
+  # Tauri does not yet support the Freedesktop.org
+  # File Transfer portal, so this is needed to support
+  # the drag and drop files.
   - --filesystem=home
+  # Instead of prompting the user with a file chooser
+  # (using the File Chooser portal), Tauri stores the
+  # files of <a download> links into XDG_DOWNLOAD_DIR
   #- --filesystem=xdg-download
+
+  # tauri-plugin-notification uses notify-rust.
+  # Removing the D-Bus access below depends on
+  # https://github.com/hoodie/notify-rust/issues/218
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --filesystem=xdg-run/keyring
-  - --device=dri
 
 build-options:
   append-path: /usr/lib/sdk/node20/bin:/usr/lib/sdk/rust-stable/bin
@@ -32,8 +43,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.46.6.tar.xz
-        sha256: f2b31de693220ba9bab76ce6ddfe5b0bfab2515cb2b0a70f3c54d4050766c32b
+        url: https://webkitgtk.org/releases/webkitgtk-2.48.0.tar.xz
+        sha256: 94904a55cf12d44a4e36ceadafff02d46da73d76be9b4769f34cbfdf0eebf88e
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -41,16 +52,18 @@ modules:
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
     config-opts:
-      - -DPORT=GTK
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_MINIBROWSER=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-      - -DUSE_GTK4=OFF
-      - -DUSE_SOUP2=ON
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_DOCUMENTATION=OFF
+      - -DENABLE_GAMEPAD=OFF
+      - -DENABLE_INTROSPECTION=OFF
+      - -DENABLE_MINIBROWSER=OFF
+      - -DENABLE_SPEECH_SYNTHESIS=OFF
+      - -DENABLE_WEBDRIVER=OFF
+      - -DPORT=GTK
+      - -DUSE_GTK4=OFF
+      - -DUSE_LIBBACKTRACE=OFF
+      - -DUSE_SOUP2=ON
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
 
@@ -66,7 +79,7 @@ modules:
           - '*'
 
       - name: libjxl
-        buildsystem: cmake
+        buildsystem: cmake-ninja
         config-opts:
           - -DCMAKE_BUILD_TYPE=Release
           - -DBUILD_TESTING=OFF
@@ -86,8 +99,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.16.0
-        commit: 8dd05105843830110cad2338e0af145a682d4708
+        tag: v8.16.1
+        commit: 82c7c05cb02a52750251bb4cc69d67f40568cf98
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
