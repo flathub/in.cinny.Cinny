@@ -43,8 +43,8 @@ modules:
   - name: webkit2gtk-4.0
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.48.0.tar.xz
-        sha256: 94904a55cf12d44a4e36ceadafff02d46da73d76be9b4769f34cbfdf0eebf88e
+        url: https://webkitgtk.org/releases/webkitgtk-2.48.2.tar.xz
+        sha256: ec58f6dfc25d3b360388e192f865068d69aab09b4d7df021f90e314d2fa54f37
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -110,8 +110,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v4.6.0
-        commit: 2329d2c55ca3347d43ea88d9dc3d012ba27e0c35
+        tag: v4.7.0
+        commit: 77952f5c58cbf83966041f7777a81a80e173b7cb
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
