@@ -52,7 +52,7 @@ modules:
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
     config-opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_BUILD_TYPE=None
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_DOCUMENTATION=OFF
       - -DENABLE_GAMEPAD=OFF
