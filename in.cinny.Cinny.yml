@@ -81,7 +81,7 @@ modules:
       - name: libjxl
         buildsystem: cmake-ninja
         config-opts:
-          - -DCMAKE_BUILD_TYPE=Release
+          - -DCMAKE_BUILD_TYPE=None
           - -DBUILD_TESTING=OFF
         sources:
           - type: git
