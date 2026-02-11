@@ -78,21 +78,6 @@ modules:
         cleanup:
           - '*'
 
-      - name: libjxl
-        buildsystem: cmake-ninja
-        config-opts:
-          - -DCMAKE_BUILD_TYPE=Release
-          - -DBUILD_TESTING=OFF
-        sources:
-          - type: git
-            url: https://github.com/libjxl/libjxl.git
-            tag: v0.11.1
-            commit: 794a5dcf0d54f9f0b20d288a12e87afb91d20dfc
-            disable-shallow-clone: true
-            x-checker-data:
-              type: git
-              tag-pattern: ^v([\d.]+)$
-
   - name: libvips
     cleanup:
       - /*
