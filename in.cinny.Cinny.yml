@@ -51,6 +51,8 @@ modules:
           version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
+    build-options:
+      num-processes: 2
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
@@ -64,6 +66,9 @@ modules:
       - -DUSE_GTK4=OFF
       - -DUSE_LIBBACKTRACE=OFF
       - -DUSE_SOUP2=ON
+      - -DUSE_JPEGXL=OFF
+      - -DENABLE_MEDIA_STREAM=OFF
+      - -DENABLE_WEB_RTC=OFF
     modules:
       - shared-modules/libsoup/libsoup-2.4.json
 
