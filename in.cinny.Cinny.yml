@@ -51,10 +51,9 @@ modules:
           version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
           url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
     buildsystem: cmake-ninja
-    build-options:
-      num-processes: 2
     config-opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DCMAKE_NINJA_JOBS=2
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_DOCUMENTATION=OFF
       - -DENABLE_GAMEPAD=OFF
