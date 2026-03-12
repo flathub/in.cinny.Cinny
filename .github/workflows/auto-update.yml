@@ -37,7 +37,7 @@ jobs:
       - uses: actions/setup-python@v2
         if: steps.is-updated.outputs.updated
         with:
-          python-version: 3.15
+          python-version: 3.14.3
 
       - name: Install flatpak-node-generator and requirements
         if: steps.is-updated.outputs.updated
