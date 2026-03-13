@@ -63,10 +63,7 @@ modules:
       - -DPORT=GTK
       - -DUSE_GTK4=OFF
       - -DUSE_LIBBACKTRACE=OFF
-      - -DUSE_SOUP2=ON
     modules:
-      - shared-modules/libsoup/libsoup-2.4.json
-
       - name: unifdef
         no-autogen: true
         make-install-args:
