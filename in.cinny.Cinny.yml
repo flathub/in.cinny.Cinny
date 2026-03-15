@@ -83,7 +83,7 @@ modules:
       - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
-      - npm run tauri build -- -b no-bundle
+      - npm run tauri build -- --no-bundle -v
       - install -Dm644 -t /app/share/metainfo/ in.cinny.Cinny.appdata.xml
       - install -Dm755 -t /app/bin/ src-tauri/target/release/cinny
       - install -Dm755 -t /app/share/icons/hicolor/scalable/apps/ cinny/public/res/svg/cinny.svg
