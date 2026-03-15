@@ -1,6 +1,6 @@
 id: in.cinny.Cinny
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
@@ -39,56 +39,6 @@ build-options:
 
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
-
-  - name: webkit2gtk-4.0
-    sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.50.5.tar.xz
-        sha256: 8737631bac3e9c7ad3e5208f9370e076c09d9c45b39980021ce54edadcc6f94f
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_INTROSPECTION=OFF
-      - -DENABLE_MINIBROWSER=OFF
-      - -DENABLE_SPEECH_SYNTHESIS=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DPORT=GTK
-      - -DUSE_GTK4=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-    modules:
-      - name: unifdef
-        no-autogen: true
-        make-install-args:
-          - prefix=${FLATPAK_DEST}
-        sources:
-          - type: archive
-            url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
-            sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
-        cleanup:
-          - '*'
-
-      - name: libjxl
-        buildsystem: cmake-ninja
-        config-opts:
-          - -DCMAKE_BUILD_TYPE=Release
-          - -DBUILD_TESTING=OFF
-        sources:
-          - type: git
-            url: https://github.com/libjxl/libjxl.git
-            tag: v0.11.2
-            commit: 332feb17d17311c748445f7ee75c4fb55cc38530
-            disable-shallow-clone: true
-            x-checker-data:
-              type: git
-              tag-pattern: ^v([\d.]+)$
 
   - name: libvips
     cleanup:
