@@ -1,6 +1,6 @@
 id: in.cinny.Cinny
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
@@ -51,6 +51,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
+    buildsystem: meson
 
   - name: Cinny
     sources:
