@@ -8,18 +8,20 @@ Subject: [PATCH] disable tauri updater
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src-tauri/tauri.conf.json b/src-tauri/tauri.conf.json
-index 431cd53..f093b4c 100644
+index 9c906b4..baf9089 100644
 --- a/src-tauri/tauri.conf.json
 +++ b/src-tauri/tauri.conf.json
-@@ -49,7 +49,7 @@
-       }
-     },
+@@ -51,10 +51,6 @@
+   "identifier": "in.cinny.app",
+   "plugins": {
      "updater": {
--      "active": true,
-+      "active": false,
-       "endpoints": [
-           "https://github.com/cinnyapp/cinny-desktop/releases/download/tauri/release.json"
-       ],
+-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE2NDc3NDBGMTAzNTk1NUYKUldSZmxUVVFEM1JIRnRuMjVRTkFOQ21lUFI5KzRMU0s4OWtBS1RNRUVCNE9LcE9GcExNZ2M2NHoK",
+-      "endpoints": [
+-        "https://github.com/cinnyapp/cinny-desktop/releases/download/tauri/release.json"
+-      ]
+     }
+   },
+   "app": {
 -- 
 2.35.1.windows.2
 

@@ -1,12 +1,12 @@
 id: in.cinny.Cinny
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: cinny
 rename-icon: cinny
 
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.node20
+  - org.freedesktop.Sdk.Extension.node24
   - org.freedesktop.Sdk.Extension.rust-stable
 
 finish-args:
@@ -35,63 +35,10 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
 
 build-options:
-  append-path: /usr/lib/sdk/node20/bin:/usr/lib/sdk/rust-stable/bin
+  append-path: /usr/lib/sdk/node24/bin:/usr/lib/sdk/rust-stable/bin
 
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
-
-  - name: webkit2gtk-4.0
-    sources:
-      - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.48.5.tar.xz
-        sha256: bb64ed9d1cfd58e8b5e89ccad71dd31adfed56336bad7695031ad0b668e1987c
-        x-checker-data:
-          type: html
-          url: https://webkitgtk.org/releases/
-          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
-          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-      - -DENABLE_DOCUMENTATION=OFF
-      - -DENABLE_GAMEPAD=OFF
-      - -DENABLE_INTROSPECTION=OFF
-      - -DENABLE_MINIBROWSER=OFF
-      - -DENABLE_SPEECH_SYNTHESIS=OFF
-      - -DENABLE_WEBDRIVER=OFF
-      - -DPORT=GTK
-      - -DUSE_GTK4=OFF
-      - -DUSE_LIBBACKTRACE=OFF
-      - -DUSE_SOUP2=ON
-    modules:
-      - shared-modules/libsoup/libsoup-2.4.json
-
-      - name: unifdef
-        no-autogen: true
-        make-install-args:
-          - prefix=${FLATPAK_DEST}
-        sources:
-          - type: archive
-            url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
-            sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
-        cleanup:
-          - '*'
-
-      - name: libjxl
-        buildsystem: cmake-ninja
-        config-opts:
-          - -DCMAKE_BUILD_TYPE=Release
-          - -DBUILD_TESTING=OFF
-        sources:
-          - type: git
-            url: https://github.com/libjxl/libjxl.git
-            tag: v0.11.1
-            commit: 794a5dcf0d54f9f0b20d288a12e87afb91d20dfc
-            disable-shallow-clone: true
-            x-checker-data:
-              type: git
-              tag-pattern: ^v([\d.]+)$
 
   - name: libvips
     cleanup:
@@ -99,8 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.17.1
-        commit: 8fa37a64547e392d3808eed8d72adab7e02b3d00
+        tag: v8.18.0
+        commit: 36fe7461e07f71107a9108e5778eec81ce00fe73
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
@@ -110,8 +57,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/cinnyapp/cinny-desktop.git
-        tag: v4.10.0
-        commit: fbc70716960943818ca4a5c0a8ee2e1940aecd08
+        tag: v4.11.2
+        commit: d2b51ee0e6752fb6db0efcf67183a24a4c3c78dc
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
@@ -136,7 +83,7 @@ modules:
       - for project in . cinny; do npm ci --offline --legacy-peer-deps --prefix=$project;
         done
       - cargo --offline fetch --manifest-path src-tauri/Cargo.toml
-      - npm run tauri build -- -b none
+      - npm run tauri build -- --no-bundle -v
       - install -Dm644 -t /app/share/metainfo/ in.cinny.Cinny.appdata.xml
       - install -Dm755 -t /app/bin/ src-tauri/target/release/cinny
       - install -Dm755 -t /app/share/icons/hicolor/scalable/apps/ cinny/public/res/svg/cinny.svg
