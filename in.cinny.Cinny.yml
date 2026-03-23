@@ -46,8 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libvips/libvips
-        tag: v8.18.0
-        commit: 36fe7461e07f71107a9108e5778eec81ce00fe73
+        tag: v8.18.1
+        commit: d00e58e8afa0bb11830d4f6fdeacc076eb6bf748
         x-checker-data:
           type: git
           tag-pattern: ^v((?:\d+.)*\d+)$
