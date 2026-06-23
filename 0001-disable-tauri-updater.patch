@@ -1,9 +1,7 @@
 diff --git a/src-tauri/tauri.conf.json b/src-tauri/tauri.conf.json
-index 0000000..0000000 100644
 --- a/src-tauri/tauri.conf.json
 +++ b/src-tauri/tauri.conf.json
-@@ -48,12 +48,7 @@
-   "version": "4.12.4",
+@@ -49,12 +49,7 @@
    "identifier": "in.cinny.app",
    "plugins": {
 -    "updater": {
