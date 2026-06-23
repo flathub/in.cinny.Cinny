@@ -1,15 +1,16 @@
 diff --git a/src-tauri/tauri.conf.json b/src-tauri/tauri.conf.json
+index 03a6ccc..8dbc1dd 100644
 --- a/src-tauri/tauri.conf.json
 +++ b/src-tauri/tauri.conf.json
-@@ -49,12 +49,7 @@
+@@ -51,10 +51,3 @@
    "identifier": "in.cinny.app",
-   "plugins": {
+-  "plugins": {
 -    "updater": {
 -      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE2NDc3NDBGMTAzNTk1NUYKUldSZmxUVVFEM1JIRnRuMjVRTkFOQ21lUFI5KzRMU0s4OWtBS1RNRUVCNE9LcE9GcExNZ2M2NHoK",
 -      "endpoints": [
 -        "https://github.com/cinnyapp/cinny-desktop/releases/download/tauri/release.json"
 -      ]
 -    }
-   },
+-  },
++  "plugins": {},
    "app": {
-     "security": {
