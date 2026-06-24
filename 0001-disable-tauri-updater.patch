@@ -1,27 +1,9 @@
-From 5c3c262c145cdee0afde37169e2926fa4c85d972 Mon Sep 17 00:00:00 2001
-From: Krishan <33421343+kfiven@users.noreply.github.com>
-Date: Wed, 20 Jul 2022 20:27:42 +0530
-Subject: [PATCH] disable tauri updater
-
----
- src-tauri/tauri.conf.json | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/src-tauri/tauri.conf.json b/src-tauri/tauri.conf.json
-index 9c906b4..baf9089 100644
---- a/src-tauri/tauri.conf.json
-+++ b/src-tauri/tauri.conf.json
-@@ -51,10 +51,6 @@
-   "identifier": "in.cinny.app",
-   "plugins": {
-     "updater": {
--      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE2NDc3NDBGMTAzNTk1NUYKUldSZmxUVVFEM1JIRnRuMjVRTkFOQ21lUFI5KzRMU0s4OWtBS1RNRUVCNE9LcE9GcExNZ2M2NHoK",
--      "endpoints": [
--        "https://github.com/cinnyapp/cinny-desktop/releases/download/tauri/release.json"
--      ]
-     }
-   },
-   "app": {
--- 
-2.35.1.windows.2
-
+diff --git a/src-tauri/Cargo.toml b/src-tauri/Cargo.toml
+index c998577..c92139e 100644
+--- a/src-tauri/Cargo.toml
++++ b/src-tauri/Cargo.toml
+@@ -35,3 +35,3 @@ tauri-plugin-dialog = "2.7.1"
+ # when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+-default = [ "custom-protocol", "updater" ]
++default = [ "custom-protocol" ]
+ # this feature is used used for production builds where `devPath` points to the filesystem
