@@ -12,7 +12,7 @@ sdk-extensions:
 finish-args:
   - --socket=x11
   # Wayland has title bar color releated issues.
-  #- --socket=wayland
+  - --socket=wayland
   #- --socket=fallback-x11
   - --share=ipc
   - --device=dri
