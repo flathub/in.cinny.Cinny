@@ -10,8 +10,6 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 
 finish-args:
-  # - --socket=x11
-  # Wayland has title bar color releated issues.
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
